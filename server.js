@@ -14,3 +14,11 @@ app.get("/", (req, res, next) => {
 http.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
 });
+
+//socket
+
+const io = require("socket.io")(http);
+
+io.on("connection", (socket) => {
+  console.log("Connected....");
+});
